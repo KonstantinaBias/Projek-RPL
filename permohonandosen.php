@@ -18,7 +18,7 @@
  <div class="content-wrapper">
 <div class="container">
 		<h2 style="text-align: center;">Tambah Data Surat</h2>
-		<form action="aksiketerangan.php" method="post" enctype="multipart/form-data">
+		<form action="aksipermohonan.php" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Nama Subjek :</label>
 				<input type="text" class="form-control" placeholder="Masukkan Subjek" name="pembuat" required="required">
@@ -28,24 +28,32 @@
 				<input type="text" class="form-control" placeholder="Masukkan Status" name="lain" required="required">
 			</div>
 				<div class="form-group">
-				<label>Lokasi Penelitian :</label>
-				<input type="text" class="form-control" placeholder="Masukkan Tujuan" name="lokasi" required="required">
+				<label>Ditujukan :</label>
+				<input type="text" class="form-control" placeholder="Masukkan Tujuan" name="tujuan" required="required">
 			</div>
 			<div class="form-group">
-				<label>Tanggal Penelitian :</label>
+				<label>Tanggal/hari :</label>
 				<input type="text" class="form-control" placeholder="Masukkan Nama" name="tgl" required="required">
 			</div>
-		
 			<div class="form-group">
-				<label>nama mitra :</label>
-				<input type="text" class="form-control" placeholder="" name="nama" required="required">
+				<label>Tempat :</label>
+				<input type="text" class="form-control" placeholder="" name="alamat" required="required">
 			</div>
+		 
 			<div class="form-group">
-				<label>Deskripsi  :</label>
-				<textarea class="form-control" name="ringkasan" required="required"></textarea>
+				<label>waktu :</label>
+				<input type="text" class="form-control" placeholder="" name="opsional" required="required">
 			</div>
-				<input type="hidden" class="form-control" placeholder="" name="jenis" value="A">
-		 		<input type="hidden" class="form-control" placeholder="" name="pembuat" required="required" value="<?php  echo $_SESSION['username'];  ?>">
+			 	 <input type="hidden" class="form-control" placeholder="" name="nama" value="permohonan"> 
+				 <input type="hidden" class="form-control" placeholder="" name="saatini" value="<?php
+ $tgl=date('d-m-Y');
+ echo $tgl;
+ ?>
+
+"> 
+			 
+		<input type="hidden" class="form-control" placeholder="" name="jenis" value="F">
+		 	 
 			<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 		</form>
 	</div>

@@ -18,7 +18,7 @@
  <div class="content-wrapper">
 <div class="container">
 		<h2 style="text-align: center;">Tambah Data Surat</h2>
-		<form action="aksiketerangan.php" method="post" enctype="multipart/form-data">
+		<form action="aksitambahdosen.php" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Nama Subjek :</label>
 				<input type="text" class="form-control" placeholder="Masukkan Subjek" name="pembuat" required="required">
@@ -44,8 +44,8 @@
 				<label>Deskripsi  :</label>
 				<textarea class="form-control" name="ringkasan" required="required"></textarea>
 			</div>
-				<input type="hidden" class="form-control" placeholder="" name="jenis" value="A">
-		 		<input type="hidden" class="form-control" placeholder="" name="pembuat" required="required" value="<?php  echo $_SESSION['username'];  ?>">
+			<input type="hidden" class="form-control" placeholder="" name="jenis" value="B">
+		  
 			<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 		</form>
 	</div>

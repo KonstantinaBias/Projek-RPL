@@ -2,7 +2,7 @@
   session_start();
  
   // cek apakah yang mengakses halaman ini sudah login
-  if($_SESSION['level']==""||$_SESSION['level']!="dosen"){
+  if($_SESSION['level']==""||$_SESSION['level']!="admin"){
     header("location:../index.php?pesan=gagal");
   }
  
@@ -37,21 +37,51 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-12 col-12">
+          <div class="col-lg-4 col-12">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-             
+                <h3>Diterima</h3>
 
-                <p>Selamat Datang di</p>
-                   <h3>Sistem Pengajuan Surat</h3>
+                <p>Produk</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+
           </div>
+           <div class="col-lg-4 col-12">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>Disetujui</h3>
+
+                <p>Produk</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          <!-- ./col -->
+         
+          <!-- ./col -->
+        </div>
+            <div class="col-lg-4 col-12">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>Ditolak</h3>
+
+                <p>Produk</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
           <!-- ./col -->
          
           <!-- ./col -->
