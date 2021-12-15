@@ -36,7 +36,7 @@
 				<label>Deskripsi  :</label>
 				<textarea class="form-control" name="ringkasan" required="required"></textarea>
 			</div>
-			<input type="hidden" class="form-control" placeholder="" name="jenis" value="B">
+				<input type="hidden" class="form-control" placeholder="" name="jenis" value="A">
 		 		<input type="hidden" class="form-control" placeholder="" name="pembuat" required="required" value="<?php  echo $_SESSION['username'];  ?>">
 			<input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 		</form>

@@ -2,7 +2,7 @@
   session_start();
  
   // cek apakah yang mengakses halaman ini sudah login
-  if($_SESSION['level']==""||$_SESSION['level']!="mahasiswa"){
+  if($_SESSION['level']==""||$_SESSION['level']!="dosen"){
     header("location:../index.php?pesan=gagal");
   }
  
@@ -19,12 +19,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Inbox Surat</h1>
+            <h1 class="m-0">Cetak Surat</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Inbox Surat</li>
+              <li class="breadcrumb-item active">Cetak Surat</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -53,7 +53,7 @@
         $no =1;
        $username = $_SESSION['username'];
       include "../koneksi.php";
-      $data = mysqli_query($kon,"SELECT * from suratbaru where lain='mahasiswa' AND pembuat='$username'");
+      $data = mysqli_query($kon,"SELECT * from suratbaru where lain='dosen' AND pembuat='$username'");
       while($d = mysqli_fetch_array($data)){
         ?>
         <tr>

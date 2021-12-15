@@ -9,10 +9,10 @@ $ringkasan = $_POST['ringkasan'];
   $opsional = $_POST['opsional'];
    $tujuan = $_POST['tujuan'];
   $alamat = $_POST['alamat'];
+   $saatini = $_POST['saatini'];
  
  
- 
-		mysqli_query($kon, "INSERT INTO surat VALUES(NULL,'$nama' ,'$tujuan','$alamat','$ringkasan','$pembuat','Dalam Proses','dosen','$lokasi','$tgl','$jenis','','$opsional','')");
+		mysqli_query($kon, "INSERT INTO surat VALUES(NULL,'$nama' ,'$tujuan','$alamat','$saatini','$pembuat','Dalam Proses','dosen','$lokasi','$tgl','$jenis','','$opsional','')");
 		
 	 
 header("location:pengajuan.php?alert=berhasil");
