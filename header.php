@@ -42,9 +42,11 @@
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">Kontak</span>
           <div class="dropdown-divider"></div>
-          
+          <a  class="dropdown-item">
+            <i class="fas fa-sign-out-alt"></i> siukdw@gmail.com
+           
           </a>
-           <a href="https://api.whatsapp.com/send/?phone=6285866643874&text&app_absent=0" class="dropdown-item">
+           <a href="https://api.whatsapp.com/send/?phone=62085333583046&text&app_absent=0" class="dropdown-item">
             <i class="fas fa-sign-out-alt"></i> WhatsApp
            
           </a>

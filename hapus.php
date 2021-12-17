@@ -7,7 +7,7 @@ $id = $_GET['id'];
  
  
 // menghapus data dari database
-mysqli_query($kon,"delete from data where id='$id'");
+mysqli_query($kon,"delete from surat where id='$id'");
  
 // mengalihkan halaman kembali ke index.php
 

@@ -1,11 +1,11 @@
-  <?php 
+  <?php
   session_start();
- 
+
   // cek apakah yang mengakses halaman ini sudah login
-  if($_SESSION['level']==""||$_SESSION['level']!="admin"){
+  if($_SESSION['level']==""||$_SESSION['level']!="mahasiswa"){
     header("location:../index.php?pesan=gagal");
   }
- 
+
   ?>
 
 
@@ -41,56 +41,90 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>Diterima</h3>
 
-                <p>Produk</p>
+
+
+                  <center> <h5>Surat Keterangan</h5></center>
               </div>
-              <div class="icon">
+              <div  style="height: 60px" class="icon">
+                <?php
+                $username = $_SESSION['username'];
+                include "../koneksi.php";
+                $tampil = mysqli_query($kon, "SELECT *, count(jenis) AS jns from feedback where jenis='A' And pembuat='$username' ");
+                while ($hasil2 = mysqli_fetch_array($tampil)){
+
+                $jnss= $hasil2['jns'];
+
+                }
+
+                ?>
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer"><?= $jnss ?> <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-
           </div>
-           <div class="col-lg-4 col-12">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>Disetujui</h3>
 
-                <p>Produk</p>
+          <div class="col-lg-4 col-12">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+
+
+
+                  <center> <h5>Surat Tugas</h5></center>
               </div>
-              <div class="icon">
+              <div  style="height: 60px" class="icon">
+                <?php
+                include "../koneksi.php";
+                $tampil = mysqli_query($kon, "SELECT *, count(jenis) AS jns from feedback where jenis='B' And pembuat='$username' ");
+                while ($hasil2 = mysqli_fetch_array($tampil)){
+
+                $jnss= $hasil2['jns'];
+
+                }
+
+                ?>
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer"><?= $jnss ?> <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-          <!-- ./col -->
-         
-          <!-- ./col -->
-        </div>
+          </div>
+
             <div class="col-lg-4 col-12">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-secondary">
               <div class="inner">
-                <h3>Ditolak</h3>
 
-                <p>Produk</p>
+
+
+                  <center> <h5>Surat Keseluruhan</h5></center>
               </div>
-              <div class="icon">
+              <div  style="height: 60px" class="icon">
+                <?php
+                $username = $_SESSION['username'];
+                include "../koneksi.php";
+                $tampil = mysqli_query($kon, "SELECT *, count(jenis) AS jns from feedback where pembuat='$username'");
+                while ($hasil2 = mysqli_fetch_array($tampil)){
+
+                $jnss= $hasil2['jns'];
+
+                }
+
+                ?>
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer"><?= $jnss ?> <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+          </div>
           <!-- ./col -->
-         
+
           <!-- ./col -->
         </div>
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-         
+
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
