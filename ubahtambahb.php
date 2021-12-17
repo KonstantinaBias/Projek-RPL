@@ -8,11 +8,10 @@ $ringkasan = $_POST['ringkasan'];
   $jenis = $_POST['jenis'];
   $opsional = $_POST['opsional'];
    $tujuan = $_POST['tujuan'];
-  $alamat = $_POST['alamat'];
+  $id = $_POST['id'];
  
  
  
-		mysqli_query($kon, "INSERT INTO surat VALUES(NULL,'$nama' ,'$tujuan','$alamat','$ringkasan','$pembuat','Dalam Proses','dosen','$lokasi','$tgl','$jenis','','$opsional','')");
-		
 	 
+	 	mysqli_query($kon, "UPDATE surat set nama_surat='$nama', lokasi_penelitian='$lokasi', tgl_penelitian='$tgl', keterangan='$ringkasan' where id='$id'");
 header("location:pengajuan.php?alert=berhasil");

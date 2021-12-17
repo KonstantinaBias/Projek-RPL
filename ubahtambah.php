@@ -1,14 +1,15 @@
 <?php 
- include '../koneksi.php';
-echo $nama = $_POST['nama'];
-$tujuan = $_POST['tujuan'];
-$alamat = $_POST['alamat'];
+include '../koneksi.php';
+ $nama = $_POST['nama'];
+  $lokasi = $_POST['lokasi'];
+$tgl = $_POST['tgl'];
 $ringkasan = $_POST['ringkasan'];
-echo $id = $_POST['id'];
+ 
+  $id = $_POST['id'];
  
  
  
  
-		mysqli_query($kon, "UPDATE surat set nama_surat='$nama', alamat='$alamat', tujuan='$tujuan', keterangan='$ringkasan' where id='$id'");
-	
+			mysqli_query($kon, "UPDATE surat set nama_surat='$nama', lokasi_penelitian='$lokasi', tgl_penelitian='$tgl', keterangan='$ringkasan' where id='$id'");
+	 
 header("location:pengajuan.php?alert=berhasil");

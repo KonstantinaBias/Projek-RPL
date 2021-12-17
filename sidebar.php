@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
      
-      <span class="brand-text font-weight-light">Mahasiswa</span>
+      <span class="brand-text font-weight-light">Dosen</span>
     </a>
 
     <!-- Sidebar -->
@@ -32,7 +32,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+        <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -48,22 +48,33 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="tambah.php" class="nav-link">
+                <a href="keterangantambah.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Keterangan Kegiatan Mahasiswa</p>
+                  <p>Surat Personalia dan SK</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="tambahtugas.php" class="nav-link">
+                <a href="tambah.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tugas</p>
                 </a>
               </li>
-     
+              <li class="nav-item">
+                <a href="tambahacara.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Surat Berita Acara</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="permohonan.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Permohonan</p>
+                </a>
+              </li>
             </ul>
           </li>
-         <li class="nav-item">
-            <a href="fed_suratmahasiswa.php" class="nav-link">
+           <li class="nav-item">
+            <a href="fed_suratdosen.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Feedback Surat
@@ -71,7 +82,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+           <li class="nav-item">
             <a href="inbox.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>

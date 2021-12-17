@@ -2,7 +2,7 @@
   session_start();
  
   // cek apakah yang mengakses halaman ini sudah login
-  if($_SESSION['level']==""||$_SESSION['level']!="mahasiswa"){
+  if($_SESSION['level']==""||$_SESSION['level']!="dosen"){
     header("location:../index.php?pesan=gagal");
   }
  
@@ -47,38 +47,42 @@
                 <table style="margin-left: 20px; margin-right: 15px " id="example1" class="table table-bordered table-striped">
       <tr>
         <th width="5%">No</th>
-        <th width="10%">Nama Surat</th>
-        <th width="10%">Tujuan</th>
-        <th width="20%">Alamat</th>
-        <th width="10%">Deskripsi Surat</th>
+        <th width="10%">Nama Mitra</th>
+        <th width="10%">Lokasi</th>
+        <th width="20%">Tanggal</th>
+        <th width="10%">deskripsi</th>
         <th width="10%">Status</th>
         <th width="10%">Jenis</th>
         <th width="10%">Aksi</th>
       </tr>
         <?php 
         $no =1;
-       $username = $_SESSION['username'];
       include "../koneksi.php";
-      $data = mysqli_query($kon,"SELECT * from surat where lain='mahasiswa' AND pembuat='$username'");
+       $username = $_SESSION['username'];
+   
+      $data = mysqli_query($kon,"SELECT * from surat where lain='dosen' AND pembuat='$username'");
       while($d = mysqli_fetch_array($data)){
         ?>
         <tr>
           <td><?php echo $no++ ?> </td>
           <td><?php echo $d['nama_surat']; ?> </td>
-          <td><?php echo $d['tujuan']; ?> </td>
-          <td><?php echo $d['alamat']; ?> </td>
+          <td><?php echo $d['lokasi_penelitian']; ?> </td>
+          <td><?php echo $d['tgl_penelitian']; ?> </td>
           <td><?php echo $d['keterangan']; ?> </td>
-           <td><?php echo $d['status']; ?> </td>
-           <td><?php echo $d['jenis']; ?> </td>
-            
-        <td><a href="hapus.php?id=<?php echo $d['id']; ?>"><button class="btn btn-danger">Hapus</button></a>
-          <?php if($d['jenis']=="A"){ ?>
-          <a href="edittambah.php?id=<?php echo $d['id']; ?>"><button class="btn btn-info">Edit</button></a>
+
+            <td><?php echo $d['status']; ?> </td>
+            <td><?php echo $d['jenis']; ?> </td>
+          <td><a href="hapus.php?id=<?php echo $d['id']; ?>"><button class="btn btn-danger">Hapus</button></a>
+            <?php if($d['jenis']=="A"){ ?>
+          <a href="editketerangan.php?id=<?php echo $d['id']; ?>"><button class="btn btn-info">Edit</button></a>
           
-        <?php }else if($d['jenis']=="B"){?>
-          <a href="edittambahtugas.php?id=<?php echo $d['id']; ?>"><button class="btn btn-info">Edit</button></a>
-        <?php }  ?>
-          </td>
+        <?php }else if($d['jenis']=="D"){?>
+          <a href="editb.php?id=<?php echo $d['id']; ?>"><button class="btn btn-info">Edit</button></a>
+        <?php }else if($d['jenis']=="E"){?>
+          <a href="editacara.php?id=<?php echo $d['id']; ?>"><button class="btn btn-info">Edit</button></a>
+        <?php }else if($d['jenis']=="F"){?>
+          <a href="editpermohonan.php?id=<?php echo $d['id']; ?>"><button class="btn btn-info">Edit</button></a>
+        <?php }?></td>
         </tr>
         <?php } ?>
     </table>

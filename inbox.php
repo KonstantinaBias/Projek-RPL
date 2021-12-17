@@ -2,7 +2,7 @@
   session_start();
  
   // cek apakah yang mengakses halaman ini sudah login
-  if($_SESSION['level']==""||$_SESSION['level']!="mahasiswa"){
+  if($_SESSION['level']==""||$_SESSION['level']!="dosen"){
     header("location:../index.php?pesan=gagal");
   }
  
@@ -24,7 +24,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Feedback v1</li>
+              <li class="breadcrumb-item active">Feddback v1</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -53,7 +53,7 @@
         $no =1;
        $username = $_SESSION['username'];
       include "../koneksi.php";
-      $data = mysqli_query($kon,"SELECT * from suratbaru where lain='mahasiswa' AND pembuat='$username'");
+      $data = mysqli_query($kon,"SELECT * from suratbaru where lain='dosen' AND pembuat='$username'");
       while($d = mysqli_fetch_array($data)){
         ?>
         <tr>
@@ -61,7 +61,16 @@
           <td><?php echo $d['jenis']; ?> </td>
     
             
-        <td><a href="print22.php?id=<?php echo $d['nama_surat']; ?>"><button class="btn btn-success">Print</button></a>
+        <td>    <?php if($d['jenis']=="F"){ ?>
+           <a href="../admin/print3.php?id=<?php echo $d['nama_surat']; ?>" target="_blank"><button class="btn btn-success">Print</button></a>
+          
+        <?php }else if($d['jenis']=="D"){?>
+          <a href="../admin/printtt2.php?id=<?php echo $d['nama_surat']; ?>" target="_blank"><button class="btn btn-success">Print</button></a>
+        <?php } else if($d['jenis']=="E"){?>
+          <a href="../admin/print4.php?id=<?php echo $d['nama_surat']; ?>" target="_blank"><button class="btn btn-success">Print</button></a>
+        <?php } else if($d['jenis']=="A"){?>
+          <a href="../admin/priinntt.php?id=<?php echo $d['nama_surat']; ?>" target="_blank"><button class="btn btn-success">Print</button></a>
+        <?php } ?>
         </td>
         </tr>
         <?php } ?>
