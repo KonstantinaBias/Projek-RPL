@@ -2,7 +2,7 @@
   session_start();
  
   // cek apakah yang mengakses halaman ini sudah login
-  if($_SESSION['level']==""||$_SESSION['level']!="dosen"){
+  if($_SESSION['level']==""||$_SESSION['level']!="admin"){
     header("location:../index.php?pesan=gagal");
   }
  
@@ -18,7 +18,15 @@
  <div class="content-wrapper">
 <div class="container">
 		<h2 style="text-align: center;">Tambah Data Surat</h2>
-		<form action="aksi_tambah.php" method="post" enctype="multipart/form-data">
+		<form action="aksiketerangan.php" method="post" enctype="multipart/form-data">
+			<div class="form-group">
+				<label>Nama Subjek :</label>
+				<input type="text" class="form-control" placeholder="Masukkan Subjek" name="pembuat" required="required">
+			</div>
+			<div class="form-group">
+				<label>Status :</label>
+				<input type="text" class="form-control" placeholder="Masukkan Status" name="lain" required="required">
+			</div>
 				<div class="form-group">
 				<label>Lokasi Penelitian :</label>
 				<input type="text" class="form-control" placeholder="Masukkan Tujuan" name="lokasi" required="required">

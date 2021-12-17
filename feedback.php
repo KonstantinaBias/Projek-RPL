@@ -36,7 +36,7 @@ error_reporting(0);
 
  <div class="content-wrapper">
 <div class="container">
-		<h2 style="text-align: center;">Atur Konfirmasi Mahasiswa</h2>
+		<h2 style="text-align: center;">Atur Fedback Mahasiswa</h2>
 		<form action="atur_feedback.php" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<input type="hidden" name="id" value="<?php echo $d['id'];?>">

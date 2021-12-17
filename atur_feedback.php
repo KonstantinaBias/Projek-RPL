@@ -20,7 +20,7 @@ $lain = $_POST['lain'];
 	}
  		$urutan = $jnss+1;
  
-		mysqli_query($kon, "INSERT INTO feedback VALUES('$id','$nama','$tujuan','$alamat','$keterangan','$pembuat',' ','$lain','','','','$urutan','$sk')");
+		mysqli_query($kon, "INSERT INTO feedback VALUES('$id','$nama','$tujuan','$alamat','$keterangan','$pembuat',' ','$lain','','','$jenis','$urutan','$sk')");
 		
 		mysqli_query($kon,"UPDATE surat set  fedback='Selesai'  where id='$id'");
 	  

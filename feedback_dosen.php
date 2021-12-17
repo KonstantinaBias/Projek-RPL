@@ -19,7 +19,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Feedback Surat Dosen</h1>
+            <h1 class="m-0">Feedback Surat Mahasiswa</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -65,8 +65,8 @@
           <td><?php echo $d['tgl_penelitian']; ?> </td>
           <td><?php echo $d['keterangan']; ?> </td>
           <td><?php echo $d['fedback']; ?> </td>
-          <td><a href="tolak.php?id=<?php echo $d['id']; ?>"><button class="btn btn-danger">Tolak</button></a>
-          <a href="feedbackdos.php?id=<?php echo $d['id']; ?>"><button class="btn btn-success">Beri Feedback</button></a></td>
+          <td>
+          <a href="feedbackdos.php?id=<?php echo $d['id']; ?>"><button class="btn btn-success">Beri Konfirmasi</button></a></td>
         </tr>
         <?php } ?>
     </table>

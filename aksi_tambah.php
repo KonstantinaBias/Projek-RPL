@@ -1,18 +1,15 @@
 <?php 
 include '../koneksi.php';
- $nama = $_POST['nama'];
-  $lokasi = $_POST['lokasi'];
-$tgl = $_POST['tgl'];
+$nama = $_POST['nama'];
+$harga = $_POST['harga'];
+$stock = $_POST['stock'];
 $ringkasan = $_POST['ringkasan'];
- $pembuat = $_POST['pembuat'];
-  $jenis = $_POST['jenis'];
-  $opsional = $_POST['opsional'];
-   $tujuan = $_POST['tujuan'];
-  $alamat = $_POST['alamat'];
  
  
  
-		mysqli_query($kon, "INSERT INTO surat VALUES(NULL,'$nama' ,'$tujuan','$alamat','$ringkasan','$pembuat','Dalam Proses','dosen','$lokasi','$tgl','$jenis','','$opsional','')");
-		
+ 
+ 
+		mysqli_query($kon, "INSERT INTO surat VALUES(NULL,'$nama','$harga','$stock','$ringkasan','$deskripsi','$warna','$warna2','$warna3','$warna4','$warna5','$xx')");
+		header("location:index.php?alert=berhasil");
 	 
-header("location:pengajuan.php?alert=berhasil");
+}
